@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "./reset.scss";
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Smooch+Sans:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Smooch+Sans:wght@300&display=swap');
+
 
 $gridColor: #383E44;
 $bgColor: #E4E5E9;
@@ -20,7 +21,6 @@ body {
 	justify-content: center;
 	align-items: center;
   background-color: #A8ABB0;
-	font-family: 'Nanum Gothic', sans-serif;
 	font-family: 'Smooch Sans', sans-serif;
 }
 
@@ -235,9 +235,43 @@ body {
 		grid-template-rows: repeat(2, 1fr);
 		gap: $gap;
 		background-color: $gridColor;
+		font-family: 'Lato', sans-serif;
 
 		.used-available {
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
 			background-color: $bgColor;
+			color: $gray;
+			align-items: center;
+			justify-content: center;
+
+			div {
+				display: flex;
+				flex-direction: column;
+				text-transform: uppercase;
+
+				&:first-child {
+					align-self: flex-end;
+				}
+				
+				span {
+					font-weight: 600;
+					
+					&:first-child {
+						font-size: 8px;
+					}
+
+					&:last-child {
+						font-size: 90px;
+					}
+				}
+			}
+
+			.available {
+				display: flex;
+				flex-direction: column;
+				text-transform: uppercase;
+			}
 		}
 
 		.nav {
