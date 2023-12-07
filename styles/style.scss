@@ -305,8 +305,51 @@ body {
 	}
 
 	.memory-detail {
+		display: grid;
+		grid-template-rows: 1.8fr 0.8fr 1fr 1.5fr 2.6fr;
 		background-color: $bgColor;
 		border-top-right-radius: 5px;
 		border-bottom-right-radius: 5px;
+		font-family: 'Roboto Condensed', sans-serif;
+		text-transform: uppercase;
+
+		.detail-space {
+			padding: 10px 15px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-size: 15px;
+
+			&:first-child {
+				padding-top: 20px;
+				background-color: $bgColor;
+				border-top-right-radius: 5px;
+			}
+
+			&:nth-child(2) {
+				background-color: #ECC214;
+			}
+
+			&:nth-child(3) {
+				background-color: #7F848A;
+			}
+
+			&:nth-child(4) {
+				color: $bgColor;
+				background-color: #E21A01;
+			}
+
+			&:last-child {
+				color: $bgColor;
+				background-color: #392AA9;
+				border-bottom-right-radius: 5px;
+			}
+
+			.tb span {
+				&:last-child {
+					font-size: 8px;
+				}
+			}
+		}
 	}
 }
