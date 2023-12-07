@@ -1,13 +1,15 @@
 @charset "UTF-8";
 @import "./reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Smooch+Sans:wght@200;400&display=swap');
 
 $gridColor: #383E44;
 $bgColor: #E4E5E9;
+$gray: #383F43;
+$red: #E21A01;
+$white: #CBCFD2;
 $gap: 2px;
 
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -18,6 +20,8 @@ body {
 	justify-content: center;
 	align-items: center;
   background-color: #A8ABB0;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Smooch Sans', sans-serif;
 }
 
 .wrapper {
@@ -30,6 +34,22 @@ body {
 	box-shadow: 5px 5px 15px 5px gray;
 	background-color: $gridColor;
 
+	.space {
+		padding: 0 5px;
+		display: flex;
+		justify-content: space-between;
+
+		.text span {
+			&:first-child {
+				font-size: 20px;
+			}
+	
+			&:nth-child(2) {
+				font-size: 10px;
+			}
+		}
+	}
+
 	.memory-img {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
@@ -38,22 +58,175 @@ body {
 		border-bottom-left-radius: 5px;
 		background-color: $gridColor;
 
+		.color {
+			padding: 10px;
+			display: grid;
+			grid-template-rows: 5.5fr 1.5fr;
+			background-color: $bgColor;
+
+			.img-disk {
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+
+				.big-circle {
+					width: 60%;
+					height: 80%;
+					position: relative;
+					border-radius: 100%;
+				}
+
+				.small-circle {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: 20%;
+					height: 20%;
+					border-radius: 100%;
+					background-color: $bgColor;
+				}
+			}
+
+			.space.disk {
+				display: flex;
+				justify-content: space-between;
+
+				.layer {
+					display: flex;
+					align-items: center;
+
+					span {
+						width: 5px;
+						height: 5px;
+						display: inline-block;
+						background-color: $white;
+						border-radius: 100%;
+
+						&:not(&:last-child) {
+							margin-right: 2px;
+						}
+					}
+				}
+			}
+		}
+
 		.memory-img__total {
+			display: grid;
+			padding: 10px;
+			grid-template-rows: 1fr 4.5fr 1.5fr;
 			border-top-left-radius: 5px;
 			background-color: $bgColor;
+
+			.page {
+				display: flex;
+
+				span {
+					width: 10px;
+					height: 10px;
+					margin-right: 5px;
+					border-radius: 100%;
+					border: 1px solid $gridColor;
+
+					&:first-child {
+						background-color: $gridColor;
+					}
+				}
+			}
+
+			.img-tower {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+
+				ul {
+					width: 35%;
+					height: 80%;
+					display: flex;
+					flex-direction: column;
+					gap: 1px;
+
+					li {
+						border-radius: 3px;
+
+						&:first-child, &:last-child {
+							height: 18%;
+							background-color: $bgColor;
+							border: 1px solid #CBCFD2;
+						}
+
+						&:first-child {
+							border-top-left-radius: 15px;
+							border-top-right-radius: 15px;
+						}
+
+						&:nth-child(2) {
+							height: 18%;
+							background-color: $gray;
+						}
+
+						&:nth-child(3) {
+							height: 28%;
+							background-color: $red;
+						}
+
+						&:nth-child(4) {
+							height: 18%;
+							background-color: $white;
+						}
+
+						&:last-child {
+							border-bottom-left-radius: 5px;
+							border-bottom-right-radius: 5px;
+						}
+					}
+				}
+			}
+
+			.space.total {
+				.material-symbols-outlined {
+					font-size: 22px;
+				}
+			}
 		}
 
-		.memory-img__grey4 {
-			background-color: $bgColor;
+		.color.grey4 {
+			.big-circle {
+				background-color: $gray;
+			}
+
+			.layer span {
+				&:not(&:last-child) {
+					background-color: $gray;
+				}
+			}
 		}
 
-		.memory-img__red8 {
-			background-color: $bgColor;
+		.color.red8 {
+			.big-circle {
+				background-color: $red;
+			}
+
+			.layer span {
+				&:first-child, &:nth-child(2) {
+					background-color: $gray;
+				}
+			}
 		}
 
-		.memory-img__white2 {
+		.color.white2 {
 			border-bottom-left-radius: 5px;
-			background-color: $bgColor;
+
+			.big-circle {
+				background-color: $white;
+			}
+
+			.layer span {
+				&:first-child {
+					background-color: $gray;
+				}
+			}
 		}
 	}
 
@@ -73,7 +246,7 @@ body {
 	}
 
 	.memory-detail {
-		background-color: #E4E5E9;
+		background-color: $bgColor;
 		border-top-right-radius: 5px;
 		border-bottom-right-radius: 5px;
 	}
