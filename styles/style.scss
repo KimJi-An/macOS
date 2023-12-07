@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "./reset.scss";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Smooch+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@300&family=Smooch+Sans:wght@300&display=swap');
 
 
 $gridColor: #383E44;
@@ -256,7 +256,7 @@ body {
 				
 				span {
 					font-weight: 600;
-					
+
 					&:first-child {
 						font-size: 8px;
 					}
@@ -275,7 +275,32 @@ body {
 		}
 
 		.nav {
+			font-family: 'Roboto Condensed', sans-serif;
 			background-color: $bgColor;
+
+			ul {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 35px;
+
+				li {
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					text-transform: uppercase;
+
+					i {
+						font-size: 30px;
+					}
+
+					span {
+						font-size: 18px;
+					}
+				}
+			}
 		}
 	}
 
